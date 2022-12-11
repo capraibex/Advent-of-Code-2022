@@ -56,10 +56,7 @@ function solve(part: number) {
   for (let i = 0; i < (part === 1 ? 20 : 10000); i++) {
     Object.values(monkeys).forEach((monkey) => {
       monkey.items.forEach((item) => {
-        const worryLevel =
-          part === 1
-            ? Math.floor(monkey.operation(item) / 3)
-            : monkey.operation(item) % mod;
+        const worryLevel = part === 1 ? Math.floor(monkey.operation(item) / 3) : monkey.operation(item) % mod;
         const newMonkey = monkey.test(worryLevel);
         monkeys[newMonkey].items.push(worryLevel);
       });

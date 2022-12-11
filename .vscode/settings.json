@@ -2,6 +2,7 @@
     "deno.enable": true,
     "editor.formatOnSave": true,   
     "prettier.singleQuote": true,
+    "prettier.printWidth": 140,
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     }

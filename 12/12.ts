@@ -58,8 +58,7 @@ function getDistance({ start, end, heightMap }: HeightMapInfos): number | null {
 
     directions
       .map((dir) => heightMap[coord.y + dir[1]]?.[coord.x + dir[0]])
-      .filter((neighbor) => neighbor && neighbor.height - coord.height <= 1)
-      .filter((n) => n.weight === -1 || n.weight > coord.weight + 1)
+      .filter((n) => n && n.height - coord.height <= 1 && (n.weight === -1 || n.weight > coord.weight + 1))
       .forEach((n) => {
         n.setWeight(coord.weight + 1);
         candidates.push(n);
